@@ -10,11 +10,9 @@ import '../../styles/session.scss';
 
 const LoginForm = ({ handleSubmit, error }) => (
   <div className="myNav">
-    <div className="center-component">
+    <div>
       <img src={smilies} className="smilies"/>
       <h3> TARGET MVD</h3>
-    </div>
-    <div className="center-component">
       <form onSubmit={handleSubmit} className="form container-form">
         {error && <strong>{error}</strong>}
           <Field
@@ -34,10 +32,8 @@ const LoginForm = ({ handleSubmit, error }) => (
           <a className="forgot-password"> Forgot your password? </a>
         </div>
       </form>
-    </div>
-    <div className="center-component">
       <b> CONNECT WITH FACEBOOK </b>
-      <div className="line"></div>
+      <div className="line"/>
       <Link to={routes.signUp} className="SIGN-UP"> SIGN UP </Link>
     </div>
   </div>
