@@ -1,6 +1,6 @@
 import React from 'react';
-/*import HomeNav from '../components/navbar/HomeNav';*/
-import WelcomeNav from '../components/navbar/WelcomeNav';
+/*import HomeNav from './HomeNav';*/
+import WelcomeNav from './WelcomeNav';
 
 const NavBar = () => (
   <div className="myNav">

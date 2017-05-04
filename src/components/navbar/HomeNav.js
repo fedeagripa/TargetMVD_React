@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { routes } from '../../constants/routesPaths';
 import avatarExample from '../../assets/avatar-example.svg';
-import ChatContainer from '../../containers/ChatContainer';
+import ChatContainer from '../chat/ChatContainer';
 import '../../styles/media.scss';
 
 const HomeNav = () => (

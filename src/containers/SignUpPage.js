@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as signUpActions from '../actions/signUpActions';
 import SignUpForm from '../components/user/SignUpForm';
-import HomeContent from './HomeContent';
+import DefaultContent from '../components/content/DefaultContent';
 
 const SignUpPage = ({ actions: { signUp } }) => (
   <div className="home-menu-open">
     <SignUpForm onSubmit={signUp}/>
-    <HomeContent/>
+    <DefaultContent/>
   </div>
 );
 

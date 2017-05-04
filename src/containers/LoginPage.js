@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as sessionActions from '../actions/sessionActions';
 import LoginForm from '../components/session/LoginForm';
-import HomeContent from './HomeContent';
+import DefaultContent from '../components/content/DefaultContent';
 
 export const LoginPage = ({ actions: { login } }) => (
   <div className="home-menu-open">
     <LoginForm onSubmit={login}/>
-    <HomeContent/>
+    <DefaultContent/>
   </div>
 );
 

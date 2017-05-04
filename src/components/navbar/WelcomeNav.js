@@ -13,10 +13,14 @@ const WelcomeNav = () => (
       <h4> Find people near you & Connect </h4>
     </div>
     <div className="separate-div">
-      <p> Create a  target  by clicking wherever on the map, specify  the ratio and and a topic: Travel, Dating, Music, etc. </p>
-    </div>
-    <div>
-      <p> <b>TARGET</b> will  start a chat whenever you’ve a match. You can always dismiss a conversation if you’re not interested. </p>
+      <ul>
+        <li>
+          <p> Create a  target  by clicking wherever on the map, specify  the ratio and and a topic: Travel, Dating, Music, etc. </p>
+        </li>
+        <li>
+          <p> <b>TARGET</b> will  start a chat whenever you’ve a match. You can always dismiss a conversation if you’re not interested. </p>
+        </li>
+      </ul>
     </div>
     <div className="separate-div">
       <button className="black-btn-large"> OK; GOT IT! </button>
