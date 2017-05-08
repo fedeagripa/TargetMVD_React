@@ -1,8 +1,10 @@
 export default {
   session: {
-    authenticated: false
+    authenticated: false,
+    step: 1
   },
   map: {
-    markers: []
-  },
+    markers: [],
+    userPosition: null
+  }
 };

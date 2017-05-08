@@ -5,7 +5,7 @@ import GoogleMapContainer from '../components/content/MapContent';
 
 const HomePage = () => (
   <div className="home-menu-open">
-    <NavBar />
+    <NavBar step={1} />
     <GoogleMapContainer />
   </div>
 );

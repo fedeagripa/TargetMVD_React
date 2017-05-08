@@ -2,6 +2,19 @@ html {
   font-size: 10px;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+[data-reactroot] {
+  height: 100%;
+}
+
 label {
   margin-top: .7rem;
 }

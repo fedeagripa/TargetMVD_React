@@ -15,7 +15,7 @@ class Map extends React.Component {
     this.handleMapMounted = this.handleMapMounted.bind(this);
     this.handleCenterChanged = this.handleCenterChanged.bind(this);
 
-    const myPosCoords = JSON.parse(localStorage.getItem('myPositionCoords'));
+    const myPosCoords = { lat: -34.397, lng: 150.64 };//JSON.parse(localStorage.getItem('myPositionCoords'));
     /*if (!myPosCoords) {
       getMyPosition(this.success, this.error);
       this.state = {
@@ -23,7 +23,7 @@ class Map extends React.Component {
       };
     }else {*/
       this.state = {
-        locationCenter: myPosCoords
+        locationCenter: { position: myPosCoords }
       };
     //}
   }
@@ -76,8 +76,8 @@ class Map extends React.Component {
   success(pos) {
     const crd = pos.coords;
     let newState = Object.assign({}, this.state);
-    newState.locationCenter.lat = parseFloat(crd.latitude.toFixed(6));
-    newState.locationCenter.lng = parseFloat(crd.longitude.toFixed(6));
+    newState.locationCenter.position.lat = parseFloat(crd.latitude.toFixed(6));
+    newState.locationCenter.position.lng = parseFloat(crd.longitude.toFixed(6));
     localStorage.setItem('myPositionCoords', JSON.stringify(newState.locationCenter));
     this.setState(newState);
   }
@@ -97,58 +97,60 @@ class Map extends React.Component {
   render() {
     const mapContainer = <div className="mapContainer" />;
 
-    let markers = [];
+    let markers = [<Marker key={1} {...this.state.locationCenter}/>];
     // TARGETS
-    if (this.props.markers) {
-      markers = this.props.markers.map((venue) => {
-        const marker = {
-          position: {
-            lat: venue.lat,
-            lng: venue.lng
-          }
-        };
-        const opts = this.getOpts(venue);
-        return <Marker {...opts} key={venue.id} {...marker}/>;
-      });
-    }
+    // if (this.props.markers) {
+    //   markers = this.props.markers.map((venue) => {
+    //     const marker = {
+    //       position: {
+    //         lat: venue.lat,
+    //         lng: venue.lng
+    //       }
+    //     };
+    //     const opts = this.getOpts(venue);
+    //     return <Marker {...opts} key={venue.id} {...marker}/>;
+    //   });
+    // }
 
-    // FREE TARGET
-    if (this.props.newTarget) {
-      if (this.props.newTarget.isVisible) {
-        const newTargetMarker = {
-          position: {
-            lat: this.props.newTarget.lat,
-            lng: this.props.newTarget.lng
-          }
-        };
+    // // FREE TARGET
+    // if (this.props.newTarget) {
+    //   if (this.props.newTarget.isVisible) {
+    //     const newTargetMarker = {
+    //       position: {
+    //         lat: this.props.newTarget.lat,
+    //         lng: this.props.newTarget.lng
+    //       }
+    //     };
 
-        const opts = this.getOpts(this.props.newTarget);
-        markers.push( <Marker {...opts} key={markers.length} {...newTargetMarker}/> );
-      }
-    }
+    //     const opts = this.getOpts(this.props.newTarget);
+    //     markers.push( <Marker {...opts} key={markers.length} {...newTargetMarker}/> );
+    //   }
+    // }
 
-    // MY POSITION
-    const myPosCoords = JSON.parse(localStorage.getItem('myPositionCoords'));
-    if (markers.length > 0) {
-      let myPosMarker;
-      if (myPosCoords) {
-        myPosMarker = {
-          position: {
-            lat: myPosCoords.lat,
-            lng: myPosCoords.lng
-          }
-        };
-      } else {
-        myPosMarker = {
-          position: {
-            lat: this.props.center.lat,
-            lng: this.props.center.lng
-          }
-        };
-      }
-      //markers.push( <Marker icon={markerIcon} key={0} {...myPosMarker}/> );
-      markers.push( <Marker icon={""} key={0} {...myPosMarker}/> );
-    }
+    // // MY POSITION
+    // const myPosCoords = JSON.parse(localStorage.getItem('myPositionCoords'));
+    // if (markers.length > 0) {
+    //   let myPosMarker;
+    //   if (myPosCoords) {
+    //     myPosMarker = {
+    //       position: {
+    //         lat: myPosCoords.lat,
+    //         lng: myPosCoords.lng
+    //       }
+    //     };
+    //   } else {
+    //     myPosMarker = {
+    //       position: {
+    //         lat: this.props.center.lat,
+    //         lng: this.props.center.lng
+    //       }
+    //     };
+    //   }
+    //   //markers.push( <Marker icon={markerIcon} key={0} {...myPosMarker}/> );
+    //   markers.push( <Marker icon={""} key={0} {...myPosMarker}/> );
+    // }
+
+    console.log(markers);
 
     return (
       <GoogleMapLoader
@@ -156,10 +158,8 @@ class Map extends React.Component {
       googleMapElement={
         <GoogleMap
         defaultZoom={15}
-        onClick={this.onMapClick}
-        center={this.state.locationCenter}
+        center={this.state.locationCenter.position}
         ref={this.handleMapMounted}
-        onCenterChanged={this.handleCenterChanged}
         options={{ streetViewControl: false, mapTypeControl: false }}>
           { markers }
         </GoogleMap>
