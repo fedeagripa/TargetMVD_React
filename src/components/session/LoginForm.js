@@ -10,9 +10,9 @@ import '../../styles/session.scss';
 
 const LoginForm = ({ handleSubmit, error }) => (
   <div className="myNav">
-    <div>
+    <div className="full-div separate-div">
       <img src={smilies} className="smilies"/>
-      <h3> TARGET MVD</h3>
+      <h3>TARGET MVD</h3>
       <form onSubmit={handleSubmit} className="form container-form">
         {error && <strong>{error}</strong>}
           <Field

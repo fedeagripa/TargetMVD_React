@@ -1,10 +1,13 @@
 export default {
-  session: {
-    authenticated: false,
-    step: 1
-  },
   map: {
     markers: [],
     userPosition: null
+  },
+  navbar: {
+    step: 1,
+    editing: false
+  },
+  burgerMenu: {
+    isOpen: false
   }
 };

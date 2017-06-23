@@ -1,23 +1,30 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
 import HomeEmptyNav from './HomeEmptyNav';
 import HomeNav from './HomeNav';
 import WelcomeNav from './WelcomeNav';
+import WhatsNav from './WhatsNav';
+import HomeNoChatYetNav from './HomeNoChatYetNav';
 
-class NavBar extends React.Component {
-  showNavByState(state) {
-    switch (state) {
+class NavBar extends Component {
+  showNavByState(step) {
+    switch (step) {
       case 1:
-        return <WelcomeNav />;
+        return <WhatsNav />;
       case 2:
-        return <HomeEmptyNav />
+        return <WelcomeNav />;
       case 3:
-        return <HomeNav />
+        return <HomeNoChatYetNav />;
+      case 4:
+        return <HomeEmptyNav />;
+      case 5:
+        return <HomeNav />;
     }
   }
 
   render () {
     return (
-      <div className="myNav">
+      <div>
         {this.showNavByState(this.props.step)}
       </div>
     );
@@ -28,4 +35,8 @@ NavBar.propTypes = {
   step: PropTypes.number.isRequired
 };
 
-export default NavBar;
+const mapStateToProps = (state) => ({
+  step: state.navbar.step
+});
+
+export default connect(mapStateToProps, null)(NavBar);
