@@ -1,25 +1,31 @@
 .center-component {
+  margin-bottom: 2rem;
   text-align: center;
-  margin: 0 0 2rem 0;
   width: 80%;
 }
 
 .home-menu-open {
   background-color: #fff;
-  height: 768px;
-  width: 1366px;
+  display: flex;
+  flex-direction: row;
 }
 
 .myNav {
-  float: left;
+  display: flex;
+  flex-basis: 30%;
+  padding: 3rem;
   text-align: center;
-  padding: 30px;
-  width: 30%;
 }
 
 .right {
-  height: 768px;
-  margin-left: 30%;
+  display: flex;
+  flex-basis: 70%;
+  flex-direction: column;
   object-fit: contain;
-  width: 683px;
+}
+
+@media (max-width: 768px) {
+  .home-menu-open {
+    flex-direction: column;
+  }
 }

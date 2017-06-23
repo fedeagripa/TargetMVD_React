@@ -1,13 +1,17 @@
+html {
+  font-size: 10px;
+}
+
 label {
-  margin-top: 0.7rem;
+  margin-top: .7rem;
 }
 
 .black-btn-large {
   background-color: #000;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  color:white;
-  height: 37px;
-  width: 185px;
+  box-shadow: 0 .2rem .4rem 0 rgba(0, 0, 0, .25);
+  color: white;
+  height: 3.7rem;
+  width: 18.5rem;
 }
 
 .form-group {
@@ -16,10 +20,17 @@ label {
 }
 
 .line {
-  border: solid 0.5px #000;
-  height: 0.5px;
+  border: solid .05rem #000;
+  height: .05rem;
   margin: 1rem 0 1rem 30%;
-  width: 121px;
+  width: 12.1rem;
+}
+
+.light-line {
+  border: solid .02rem #000;
+  height: .02rem;
+  opacity: .3;
+  width: 33.9rem;
 }
 
 .mySelect {
@@ -28,9 +39,29 @@ label {
 }
 
 .smilies {
-  height: 78px;
+  height: 7.8rem;
   object-fit: contain;
-  width: 133px;
+  width: 13.3rem;
 }
 
+.left {
+  float: left;
+}
 
+.middle {
+  display: block;
+  overflow: hidden;
+}
+
+.toRight {
+  float: right;
+}
+
+.text-left {
+  margin-left: 5rem;
+  text-align: left;
+}
+
+.separate-div {
+  margin-top: 10rem;
+}

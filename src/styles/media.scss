@@ -1,0 +1,26 @@
+.bitmap {
+  height: 1.7rem;
+  width: 1.7rem;
+}
+
+.small-icon {
+  height: 1.7rem;
+  object-fit: contain;
+  width: 1.7rem;
+}
+
+.small-icon-grey {
+  height: 1.8rem;
+  object-fit: contain;
+  opacity: .5;
+  width: 1.8rem;
+}
+
+.avatar {
+  background-color: #2fbcf7;
+  border-radius: 50%;
+  height: 12.4rem;
+  object-fit: contain;
+  padding: 2rem;
+  width: 12.5rem;
+}
