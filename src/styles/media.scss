@@ -24,3 +24,32 @@
   padding: 2rem;
   width: 12.5rem;
 }
+
+.topic-list {
+  margin: auto;
+  width: 50%;
+}
+
+.topic-football {
+  list-style-image: url('../assets/football.png');
+}
+
+.topic-movies {
+  list-style-image: url('../assets/movies.png');
+}
+
+.topic-music {
+  list-style-image: url('../assets/music.png');
+}
+
+.rounded {
+  border-radius: 50%;
+  height: 70%;
+  object-fit: contain;
+  width: 70%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}

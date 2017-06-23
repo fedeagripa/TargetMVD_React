@@ -13,7 +13,7 @@ import '../../styles/session.scss';
 
 const SignUpForm = ({ handleSubmit }) => (
   <div className="myNav">
-    <div>
+    <div className="full-div separate-div">
       <img src={smilies} className="smilies"/>
       <form onSubmit={handleSubmit} className="form container-form">
           <h3>SIGN UP</h3>
@@ -50,7 +50,7 @@ const SignUpForm = ({ handleSubmit }) => (
           />
           <button type="submit" className="black-btn-large">SIGN UP</button>
       </form>
-      <div className="line"/>
+      <div className="line small-separation"/>
       <Link to={routes.login} className="SIGN-UP"> SIGN IN </Link>
     </div>
   </div>

@@ -41,3 +41,6 @@ dist
 # Environments constants
 src/constants/devConstants.js
 src/constants/prodConstants.js
+
+#Media content
+src/assets/*

@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
-import { config } from './src/constants/devConstants'; // eslint-disable-line import/no-unresolved
+import { config } from './src/constants/constants'; // eslint-disable-line import/no-unresolved
 
 export default {
   resolve: {
