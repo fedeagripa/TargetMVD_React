@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { default_map_position } from '../constants/constants';
 import * as targetActions from '../actions/targetActions';
 import Map from '../components/common/Map';
 
 export const GoogleMapContainer = ({ targets, actions, newTarget, topics }) => {
-  const location = {
-    lat: -34.906498,
-    lng: -56.185258
-  };
+  const location = default_map_position;
 
   let markers = targets;
   return (

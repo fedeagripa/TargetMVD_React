@@ -12,7 +12,7 @@ export const login = (user) => {
         const { image, name, userId, email } = response;
         sessionService.saveUser({ image, name, userId, email })
         .then(() => {
-          browserHistory.push('/home');
+          browserHistory.push(routes.home);
         });
       });
     }).catch(err => {
@@ -24,23 +24,20 @@ export const login = (user) => {
 };
 
 export const logout = () => {
-  return () => {
-    return sessionApi.logout().then(() => {
-      sessionService.deleteSession();
-      sessionService.deleteUser();
-      browserHistory.push(routes.login);
-    }).catch(err => {
-      throw (err);
-    });
-  };
+  return sessionApi.logout().then(() => {
+    sessionService.deleteSession();
+    sessionService.deleteUser();
+    browserHistory.push(routes.login);
+  }).catch(err => {
+    throw (err);
+  });
 };
 
 export const edit = (user, id) => {
   return () => {
     return sessionApi.edit(user, id).then( () => {
-      browserHistory.push('/home');
+      browserHistory.push(routes.home);
     }).catch(err => {
-      debugger
       throw new SubmissionError({
         _error: err.error
       });

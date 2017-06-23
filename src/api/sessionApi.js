@@ -14,7 +14,6 @@ class Session {
   }
 
   static edit(user, id) {
-    debugger;
     return api.put(`/users/${id}/password/change`, { user });
   }
 }

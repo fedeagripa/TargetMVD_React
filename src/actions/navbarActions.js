@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import { browserHistory } from 'react-router';
+import { routes } from '../constants/routesPaths';
 
 export function changeStep() {
   return {
@@ -8,7 +9,7 @@ export function changeStep() {
 }
 
 export function changeEditing() {
-  browserHistory.push('/edit');
+  browserHistory.push(routes.edit);
   return {
     type: types.CHANGE_EDITING,
   };

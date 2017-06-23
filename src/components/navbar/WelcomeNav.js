@@ -30,7 +30,7 @@ class WelcomeNav extends Component {
         <div className="separate-div">
           <button onClick={this.props.changeStep}
                   className="black-btn-large">
-            OK; GOT IT!
+                  OK; GOT IT!
           </button>
         </div>
       </div>

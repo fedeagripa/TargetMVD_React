@@ -8,7 +8,7 @@ import avatarExample from '../../assets/avatar-example.svg';
 import smilies from '../../assets/smilies.svg';
 import EditForm from '../user/EditForm';
 
-export const EditUser = ({ user, actions: { edit } }) => (
+const EditUser = ({ user, actions: { edit } }) => (
   <div className="full-div">
     <div className="header-blue">
       <h3> EDIT PROFILE </h3>

@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+//import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { routes } from '../../constants/routesPaths';
+//import { routes } from '../../constants/routesPaths';
 import avatarExample from '../../assets/avatar-example.svg';
 import { changeEditing } from '../../actions/navbarActions';
+import { logout } from '../../actions/sessionActions';
 
 const UserNavBar = ({ user, changeEditing }) => (
-	<div>
-		<h3>TARGET</h3>
+  <div>
+    <h3>TARGET</h3>
     <div>
       <img src={avatarExample} className="avatar"/>
     </div>
@@ -15,7 +16,7 @@ const UserNavBar = ({ user, changeEditing }) => (
     <div>
       <a onClick={changeEditing} className="SIGN-UP"> Edit </a>
       /
-      <Link to={routes.logout} className="SIGN-UP"> Logout </Link>
+      <a onClick={logout} className="SIGN-UP"> Logout </a>
     </div>
     <div className="line"/>
   </div>
@@ -23,11 +24,13 @@ const UserNavBar = ({ user, changeEditing }) => (
 
 UserNavBar.propTypes = {
   user: PropTypes.object,
-  changeEditing: PropTypes.func
+  changeEditing: PropTypes.func,
+  logout: PropTypes.func
 };
 
 const mapDispatchToProps = (dispatch) => ({
   changeEditing: () => dispatch(changeEditing()),
+  logout: () => dispatch(logout()),
 });
 
 const mapStateToProps = (state) => ({

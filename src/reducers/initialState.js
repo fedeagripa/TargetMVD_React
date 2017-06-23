@@ -1,7 +1,10 @@
+import { default_map_position } from '../constants/constants';
+
 export default {
   map: {
     markers: [],
-    userPosition: null
+    userPosition: null,
+    myPositionCoords: default_map_position
   },
   navbar: {
     step: 1,

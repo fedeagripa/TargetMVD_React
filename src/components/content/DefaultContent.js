@@ -3,9 +3,7 @@ import right from '../../assets/right.png';
 
 const DefaultContent = () => (
   <div className="right">
-    <img src={right}
-     srcSet="img/right@2x.jpg 2x,img/right@3x.jpg 3x"
-     />
+    <img src={right} srcSet="img/right@2x.jpg 2x,img/right@3x.jpg 3x" />
   </div>
 );
 

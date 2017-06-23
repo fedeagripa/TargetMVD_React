@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
+import { navbar_flow } from '../../constants/constants';
 import HomeEmptyNav from './HomeEmptyNav';
 import HomeNav from './HomeNav';
 import WelcomeNav from './WelcomeNav';
@@ -9,15 +10,15 @@ import HomeNoChatYetNav from './HomeNoChatYetNav';
 class NavBar extends Component {
   showNavByState(step) {
     switch (step) {
-      case 1:
+      case navbar_flow.first_nav:
         return <WhatsNav />;
-      case 2:
+      case navbar_flow.second_nav:
         return <WelcomeNav />;
-      case 3:
+      case navbar_flow.third_nav:
         return <HomeNoChatYetNav />;
-      case 4:
+      case navbar_flow.fourth_nav:
         return <HomeEmptyNav />;
-      case 5:
+      case navbar_flow.fifth_nav:
         return <HomeNav />;
     }
   }

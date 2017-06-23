@@ -2,6 +2,7 @@ import { SubmissionError } from 'redux-form';
 import { browserHistory } from 'react-router';
 import sessionApi from '../api/sessionApi';
 import { sessionService } from 'redux-react-session';
+import { routes } from '../constants/routesPaths';
 
 export const signUp = (user) => {
   return () => {
@@ -12,7 +13,7 @@ export const signUp = (user) => {
         const { image, name, userId, email } = response;
         sessionService.saveUser({ image, name, userId, email })
         .then(() => {
-          browserHistory.push('/');
+          browserHistory.push(routes.index);
         });
       });
     }).catch(err => {
