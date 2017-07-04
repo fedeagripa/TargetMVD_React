@@ -14,3 +14,10 @@ export function changeEditing() {
     type: types.CHANGE_EDITING,
   };
 }
+
+export function returnToSteps() {
+  browserHistory.push(routes.home);
+  return {
+    type: types.RETURN_TO_STEPS,
+  };
+}
