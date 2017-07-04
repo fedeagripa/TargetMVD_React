@@ -12,6 +12,10 @@ class Session {
   static signUp(user) {
     return api.post(`/users`, user);
   }
+
+  static edit(user, id) {
+    return api.put(`/users/${id}/password/change`, { user });
+  }
 }
 
 export default Session;

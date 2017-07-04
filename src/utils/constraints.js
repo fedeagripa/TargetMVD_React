@@ -30,5 +30,22 @@ export const signUp = {
   }
 };
 
+export const edit = {
+  email: {
+    presence: true
+  },
+  currentPassword: {
+    presence: true
+  },
+  newPassword: {
+    presence: true
+  },
+  confirmNewPassword: {
+    presence: true,
+    equality: 'newPassword'
+  },
+
+};
+
 export const validations = (constraints) =>
   (data) => validate(data, constraints) || {};

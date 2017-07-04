@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
-import littleSmilies from '../../assets/little-smilies.svg';
+import topicImage from '../../assets/football.png';
+import person from '../../assets/person4.jpeg';
 
 const ChatLine = ({ name, image, comment, topic }) => (
   <div>
     <div className="left">
-      <img src={littleSmilies} className="bitmap"/>
+      <img src={person} className="rounded"/>
     </div>
     <div className="toRight">
-      <img src={littleSmilies} className="bitmap"/>
+      <img src={topicImage} className="bitmap"/>
     </div>
     <span className="middle text-left">
       <b>{name}</b>
