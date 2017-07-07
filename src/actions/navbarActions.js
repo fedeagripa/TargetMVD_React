@@ -21,3 +21,17 @@ export function returnToSteps() {
     type: types.RETURN_TO_STEPS,
   };
 }
+
+export function contact() {
+  browserHistory.push(routes.home);
+  return {
+    type: types.CONTACT,
+  };
+}
+
+export function closeModal() {
+  browserHistory.push(routes.home);
+  return {
+    type: types.CONTACT,
+  };
+}

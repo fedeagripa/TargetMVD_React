@@ -9,7 +9,7 @@ class WhatsNav extends Component {
     return (
       <div>
         <div className="header-blue">
-          <h3> WHAT'S TARGET? </h3> 
+          <h3> WHAT'S TARGET? </h3>
           <h3 onClick={this.props.returnToSteps} className="force-right"> X </h3>
         </div>
         <div className="long-container small-separation">
