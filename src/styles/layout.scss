@@ -17,6 +17,29 @@
   text-align: center;
 }
 
+.backdropStyle {
+  background: rgba(42, 119, 152, 0.8);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 30%;
+  z-index: 9998;
+}
+
+.modalStyle {
+  background: #fff;
+  left: 10%;
+  min-height: 70%;
+  margin-top: 20%;
+  padding: 1rem;
+  position: absolute;
+  top: 15%;
+  transform: translate(-30%, -50%);
+  width: 25%;
+  z-index: 9999;
+}
+
 .right {
   display: flex;
   flex-basis: 70%;

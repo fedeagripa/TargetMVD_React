@@ -7,3 +7,5 @@ export const GET_SESSION_ERROR = 'GET_SESSION_ERROR';
 export const CHANGE_STEP = 'CHANGE_STEP';
 export const CHANGE_EDITING = 'CHANGE_EDITING';
 export const SET_POSITION = 'SET_POSITION';
+export const RETURN_TO_STEPS = 'RETURN_TO_STEPS';
+export const CONTACT = 'CONTACT';

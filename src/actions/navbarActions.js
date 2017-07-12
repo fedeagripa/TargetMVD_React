@@ -14,3 +14,24 @@ export function changeEditing() {
     type: types.CHANGE_EDITING,
   };
 }
+
+export function returnToSteps() {
+  browserHistory.push(routes.home);
+  return {
+    type: types.RETURN_TO_STEPS,
+  };
+}
+
+export function contact() {
+  browserHistory.push(routes.home);
+  return {
+    type: types.CONTACT,
+  };
+}
+
+export function closeModal() {
+  browserHistory.push(routes.home);
+  return {
+    type: types.CONTACT,
+  };
+}

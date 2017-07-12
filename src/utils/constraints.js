@@ -44,7 +44,15 @@ export const edit = {
     presence: true,
     equality: 'newPassword'
   },
+};
 
+export const contact = {
+  email: {
+    presence: true
+  },
+  message: {
+    presence: true
+  }
 };
 
 export const validations = (constraints) =>

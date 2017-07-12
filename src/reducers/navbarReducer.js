@@ -9,6 +9,12 @@ export default function navbarReducer(state = initialState.navbar, action = {}) 
     case types.CHANGE_EDITING: {
       return { ...state, editing: !state.editing };
     }
+    case types.RETURN_TO_STEPS: {
+      return state;
+    }
+    case types.CONTACT: {
+      return state;
+    }
     default:
       return state;
   }
