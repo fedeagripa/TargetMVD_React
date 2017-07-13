@@ -30,10 +30,11 @@ GoogleMapContainer.propTypes = {
 };
 
 const mapStateToProps = ({ targets, newTarget, topics }) => {
+  const topicsList = topics.values;
   return {
     targets,
     newTarget,
-    topics
+    topicsList
   };
 };
 

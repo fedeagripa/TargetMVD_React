@@ -1,12 +1,11 @@
 import React, { PropTypes } from 'react';
-//import { Link } from 'react-router';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
-//import { routes } from '../../constants/routesPaths';
+import { routes } from '../../constants/routesPaths';
 import avatarExample from '../../assets/avatar-example.svg';
-import { changeEditing } from '../../actions/navbarActions';
 import { logout } from '../../actions/sessionActions';
 
-const UserNavBar = ({ user, changeEditing }) => (
+const UserNavBar = ({ user }) => (
   <div>
     <h3>TARGET</h3>
     <div>
@@ -14,7 +13,7 @@ const UserNavBar = ({ user, changeEditing }) => (
     </div>
     <b> {user.name} </b>
     <div>
-      <a onClick={changeEditing} className="SIGN-UP"> Edit </a>
+      <Link id="edit" to={routes.edit} className="SIGN-UP"> Edit </Link>
       /
       <a onClick={logout} className="SIGN-UP"> Logout </a>
     </div>
@@ -24,12 +23,10 @@ const UserNavBar = ({ user, changeEditing }) => (
 
 UserNavBar.propTypes = {
   user: PropTypes.object,
-  changeEditing: PropTypes.func,
   logout: PropTypes.func
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  changeEditing: () => dispatch(changeEditing()),
   logout: () => dispatch(logout()),
 });
 

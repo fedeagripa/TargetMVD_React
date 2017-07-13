@@ -27,19 +27,7 @@
 
 .topic-list {
   margin: auto;
-  width: 50%;
-}
-
-.topic-football {
-  list-style-image: url('../assets/football.png');
-}
-
-.topic-movies {
-  list-style-image: url('../assets/movies.png');
-}
-
-.topic-music {
-  list-style-image: url('../assets/music.png');
+  width: 3rem;
 }
 
 .rounded {
@@ -52,4 +40,26 @@
 img {
   height: 100%;
   width: 100%;
+}
+
+ul {
+  margin-top: 1rem !important;
+  list-style: none;
+}
+
+.images-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 40%;
+  
+  img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .text-container {
+    width: 70%;
+  }
 }

@@ -12,5 +12,8 @@ export default {
   },
   burgerMenu: {
     isOpen: false
+  },
+  topics: {
+    values: []
   }
 };
