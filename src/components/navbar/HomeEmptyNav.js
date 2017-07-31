@@ -1,10 +1,16 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { changeStep } from '../../actions/navbarActions';
+import { getTopics } from '../../actions/topicActions';
 import smilies from '../../assets/smilies.svg';
 import UserNavBar from './UserNavBar';
+import TopicList from '../topics/TopicList';
 
 class HomeEmptyNav extends Component {
+
+  componentWillMount() {
+    this.props.getTopics();
+  }
 
   render() {
     return (
@@ -15,11 +21,7 @@ class HomeEmptyNav extends Component {
         </div>
         <div className="separate-div">
           <b> Psss!, these are the most poopular targets: </b>
-          <ul>
-            <li className="topic-list topic-football"> Football </li>
-            <li className="topic-list topic-movies"> Movies </li>
-            <li className="topic-list topic-music"> Music </li>
-          </ul>
+          <TopicList topics={this.props.topics} />
         </div>
         <div className="separate-div">
           <img src={smilies} className="smilies-small" onClick={this.props.changeStep}/>
@@ -30,11 +32,18 @@ class HomeEmptyNav extends Component {
 }
 
 HomeEmptyNav.propTypes = {
-  changeStep: PropTypes.func
+  changeStep: PropTypes.func,
+  getTopics: PropTypes.func,
+  topics: PropTypes.array
 };
+
+const mapStateToProps = (state) => ({
+  topics: state.topics.values
+});
 
 const mapDispatchToProps = (dispatch) => ({
   changeStep: () => dispatch(changeStep()),
+  getTopics: () => dispatch(getTopics()),
 });
 
-export default connect(null, mapDispatchToProps)(HomeEmptyNav);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeEmptyNav);

@@ -5,6 +5,7 @@ import { reducer as burgerMenu } from 'redux-burger-menu';
 import { sessionReducer } from 'redux-react-session';
 import map from './mapReducer';
 import navbar from './navbarReducer';
+import topics from './topicReducer';
 
 const rootReducer = combineReducers({
   form: formReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   map,
   navbar,
+  topics,
   burgerMenu
 });
 
