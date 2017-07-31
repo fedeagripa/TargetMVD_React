@@ -1,18 +1,7 @@
-.Select-control {
-  margin-left: 21%;
-  width: 58% !important;
-}
-
 .input-field {
   border: solid .05rem #000;
   height: 3.7rem;
   width: 18.8rem;
-}
-
-.textarea-field {
-  max-height: 20rem;
-  max-width: 90%;
-  min-height: 10rem;
 }
 
 .map {
@@ -25,52 +14,13 @@
   width: 100%;
 }
 
-/* Position and sizing of burger button */
-.bm-burger-button {
-  height: 2rem;
-  left: 1.6rem;
-  padding: 0;
-  position: fixed;
-  top: 1.6rem;
-  width: 3rem;
+.Select-control {
+  margin-left: 21%;
+  width: 58% !important;
 }
 
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: #373a47;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 3.4rem;
-  left: 1.6rem;
-  width: 3.4rem;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background: black;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  background: white;
-  font-size: 1.15em;
-  padding-left: 5.6rem;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-  padding: .8em;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+.textarea-field {
+  max-height: 20rem;
+  max-width: 90%;
+  min-height: 10rem;
 }
