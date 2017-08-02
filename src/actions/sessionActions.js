@@ -7,18 +7,20 @@ import { routes } from '../constants/routesPaths';
 export const login = (user) => {
   return () => {
     return sessionApi.login({ user }).then(response => {
-      const { token } = response;
-      sessionService.saveSession({ token }).then(() => {
-        const { image, name, userId, email } = response;
-        sessionService.saveUser({ image, name, userId, email })
-        .then(() => {
-          browserHistory.push(routes.home);
-        });
-      });
+      saveUser(response);
     }).catch(err => {
       throw new SubmissionError({
         _error: err.error
       });
+    });
+  };
+};
+
+export const facebookLogin = (face_response) => {
+  return () => {
+    let user = { "type": "facebook", "fb_access_token": face_response.accessToken };
+    return sessionApi.login(user).then(response => {
+      saveUser(response);
     });
   };
 };
@@ -44,3 +46,14 @@ export const edit = (user, id) => {
     });
   };
 };
+
+function saveUser(response) {
+  const { token } = response;
+  sessionService.saveSession({ token }).then(() => {
+    const { image, name, userId, email } = response;
+    sessionService.saveUser({ image, name, userId, email })
+    .then(() => {
+      browserHistory.push(routes.home);
+    });
+  });
+}

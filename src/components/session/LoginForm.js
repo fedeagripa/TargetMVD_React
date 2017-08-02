@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router';
 import Input from '../common/Input';
+import FacebookButton from '../common/FacebookButton';
 import * as constraints from '../../utils/constraints';
 import { routes } from '../../constants/routesPaths';
 import smilies from '../../assets/smilies.svg';
@@ -32,7 +33,7 @@ const LoginForm = ({ handleSubmit, error }) => (
           <a className="forgot-password"> Forgot your password? </a>
         </div>
       </form>
-      <b> CONNECT WITH FACEBOOK </b>
+      <FacebookButton />
       <div className="line"/>
       <Link to={routes.signUp} className="SIGN-UP"> SIGN UP </Link>
     </div>
