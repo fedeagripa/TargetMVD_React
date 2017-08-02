@@ -22,3 +22,5 @@ export const navbar_flow = {
 export const config = {
   API_URL: 'http://target-mvd-api.herokuapp.com/api/v1'
 };
+
+export const face_app_key = '303255903479893';
