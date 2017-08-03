@@ -9,7 +9,7 @@ const UserNavBar = ({ user }) => (
   <div>
     <h3>TARGET</h3>
     <div>
-      <img src={avatarExample} className="avatar"/>
+      <img src={user.image? user.image : avatarExample} className="avatar"/>
     </div>
     <b> {user.name} </b>
     <div>
