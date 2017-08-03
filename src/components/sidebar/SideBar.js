@@ -3,6 +3,7 @@ import { stack as Menu } from 'react-burger-menu';
 import { decorator as reduxBurgerMenu } from 'redux-burger-menu';
 import { routes } from '../../constants/routesPaths';
 import { Link } from 'react-router';
+import '../../styles/burger.scss';
 
 class SideBar extends Component {
 

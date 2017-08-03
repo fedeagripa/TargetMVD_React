@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router';
-import { sex_options } from '../../constants/constants';
+import { sexOptions } from '../../constants/constants';
 import { routes } from '../../constants/routesPaths';
 import AutoSelect from '../common/AutoSelect';
 import Input from '../common/Input';
@@ -43,7 +43,7 @@ const SignUpForm = ({ handleSubmit }) => (
           />
           <Field
             name="gender"
-            options={sex_options}
+            options={sexOptions}
             component={AutoSelect}
             label="GENDER"
             className="mySelect"
