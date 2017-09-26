@@ -13,8 +13,12 @@ class Session {
     return api.post(`/users`, user);
   }
 
-  static edit(user, id) {
+  static editPassword(user, id) {
     return api.put(`/users/${id}/password/change`, { user });
+  }
+
+  static edit(user, id) {
+    return api.put(`/users/${id}`, { user });
   }
 }
 

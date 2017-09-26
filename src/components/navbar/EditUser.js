@@ -2,11 +2,12 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+
 import { routes } from '../../constants/routesPaths';
 import * as sessionActions from '../../actions/sessionActions';
-import avatarExample from '../../assets/avatar-example.svg';
 import smilies from '../../assets/smilies.svg';
 import EditForm from '../user/EditForm';
+import Avatar from '../common/Avatar';
 
 const EditUser = ({ user, actions: { edit } }) => (
   <div className="full-div">
@@ -14,12 +15,7 @@ const EditUser = ({ user, actions: { edit } }) => (
       <h3> EDIT PROFILE </h3>
     </div>
     <div>
-      <div className="small-separation">
-        <img src={avatarExample} className="avatar"/>
-      </div>
-      <div>
-        <b> {user.name} </b>
-      </div>
+      <Avatar />
       <div className="small-separation">
         <EditForm onSubmit={(data) => edit(data, user.userId)}/>
       </div>

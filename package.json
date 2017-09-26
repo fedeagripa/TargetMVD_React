@@ -34,6 +34,7 @@
   "author": "Bernabe Gonzalez",
   "license": "MIT",
   "dependencies": {
+    "blueimp-load-image": "2.14.0",
     "bootstrap": "3.3.7",
     "create-react-class": "15.5.2",
     "humps": "2.0.0",

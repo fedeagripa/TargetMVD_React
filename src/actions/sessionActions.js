@@ -37,13 +37,7 @@ export const logout = () => {
 
 export const edit = (user, id) => {
   return () => {
-    return sessionApi.edit(user, id).then( () => {
-      browserHistory.push(routes.home);
-    }).catch(err => {
-      throw new SubmissionError({
-        _error: err.error
-      });
-    });
+    user.prev? editPassword(user, id) : editUser(user, id);
   };
 };
 
@@ -55,5 +49,22 @@ function saveUser(response) {
     .then(() => {
       browserHistory.push(routes.home);
     });
+  });
+}
+
+function editPassword(user, id) {
+  return sessionApi.editPassword(user, id).then( () => {
+    browserHistory.push(routes.home);
+  }).catch(err => {
+    throw new SubmissionError({
+      _error: err.error
+    });
+  });
+}
+
+function editUser(image, id) {
+  let user = { "user": { "img": { "url": image } } };
+  return sessionApi.edit(user, id).then( () => {
+    browserHistory.push(routes.home);
   });
 }
